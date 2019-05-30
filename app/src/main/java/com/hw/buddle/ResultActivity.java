@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.NumberFormat;
@@ -31,6 +32,38 @@ public class ResultActivity extends AppCompatActivity {
                 "\nsum = " + sum +
                 "\naverage = " + nf.format(average);
         tvResult.setText(text);
+        alert(average);
+    }
+
+    private void alert(double average){
+        String message = new String();
+        String title = new String();
+        int pic = 0;
+        if(average == 100){
+            message = "100";
+            title = "PASS";
+            pic = R.drawable.tick;
+        }
+        else if(average >= 80 && average < 100){
+            message = "excellent";
+            title = "PASS";
+            pic = R.drawable.circle;
+        }
+        else if(average >= 60 && average < 80){
+            message = "ordinary";
+            title = "PASS";
+            pic = R.drawable.circle;
+        }else {
+            message = "SO BAD";
+            title = "FAIL";
+            pic = R.drawable.fork;
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setTitle(title);
+        builder.setIcon(pic);
+        builder.show();
     }
     public void onBackClick(View view){
         finish();
