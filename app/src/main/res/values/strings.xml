@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Buddle</string>
+    <string name="text_tvText">Scores of Final Exam</string>
+    <string name="etProgramming"></string>
+    <string name="etDataStructure"></string>
+    <string name="etAlgorithm"></string>
+    <string name="btSubmit">SUBMIT</string>
+</resources>
